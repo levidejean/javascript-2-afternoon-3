@@ -137,12 +137,12 @@ contains(names, 'Colt', function(result){
 
 function uniq(arr, cb){
   var somethingElse = []; 
-  for(i=0;i<arr.length;i++){
+  for(var i = 0;i<arr.length;i++){
     
     if(!somethingElse.includes(arr[i])){
-      
-      somethingElse.push(arr[i])
+      somethingElse.push(arr[i]);
     }
+    cb(somethingElse);
   }
 
   return somethingElse;
@@ -166,10 +166,10 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
-function each(namesArr, callback){
-  namesArr.forEach(element => {
-    return callback(namesArr, namesArr[i]);
-  });
+function each(arr, cb){
+  for(var i = 0; i<arr.length; i++){
+    cb(arr[i], i);
+  }
 }
 
 // Do not edit the code below.
@@ -191,8 +191,12 @@ each(names, function(item, indice){
 
 // Code here
 
-function getUserById({users, id, callback}){
-  
+function getUserById(users, id, callback) {
+  for (var i = 0; i<users.length; i++) {
+    if (users[i].id == id) {
+        callback(users[i]);
+    }
+  }
 }
 
 // Do not edit the code below.

@@ -32,7 +32,7 @@
 
 function first(arr, cb){
   return cb(arr[0]);
-};
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -53,11 +53,11 @@ first(names, function(firstName){
 */
 
 //Code Here
-
-function last(arr, callback){
-  var something = arr.length -1;
-  return callback(arr[something]);
+function last(arr, cb2){
+  let stuff = arr.length-1;
+return cb2(arr[stuff]);
 }
+
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -80,8 +80,8 @@ last(names, function(lastName){
 //Code Here
 
 function multiply(num1, num2, callback){
-  return callback(num1*num2);
-};
+  return callback(num1 * num2);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -102,15 +102,12 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-function contains (arr, name, cb1){
-  for(i=0;i<arr.length;i++){
-    if (name === arr[i]){
-      return cb1 (true);
-    }else{
-      return cb1(false);
-    }
+function contains(arr, name, callback){
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] === name){
+      return callback(true);
+    } return callback(false);
   }
-
 }
 
 // Do not edit the code below.
@@ -134,19 +131,17 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-
-function uniq(arr, cb){
-  var somethingElse = []; 
-  for(var i = 0;i<arr.length;i++){
-    
-    if(!somethingElse.includes(arr[i])){
-      somethingElse.push(arr[i]);
+function uniq(arr, cb5){
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    if (!newArr.includes(arr[i])){
+      newArr.push(arr[i]);
     }
-    cb(somethingElse);
+    cb5(newArr);
   }
-
-  return somethingElse;
+  return newArr;
 }
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -166,9 +161,9 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
-function each(arr, cb){
-  for(var i = 0; i<arr.length; i++){
-    cb(arr[i], i);
+function each(names, callback){
+  for(let i = 0; i<names.length; i ++){
+    callback(names[i], 1);
   }
 }
 
@@ -190,14 +185,14 @@ each(names, function(item, indice){
 */
 
 // Code here
-
-function getUserById(users, id, callback) {
-  for (var i = 0; i<users.length; i++) {
-    if (users[i].id == id) {
-        callback(users[i]);
+function getUserById(users, id, callback){
+  for (let i = 0; i< users.length; i++){
+    if (users[i].id === id){
+      callback(users[i]);
     }
   }
 }
+
 
 // Do not edit the code below.
 var users = [
